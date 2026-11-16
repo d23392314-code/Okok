@@ -36,6 +36,8 @@
 #include "driver/i2s_std.h"
 #include "mbedtls/base64.h"
 
+enum FaceMode { F_LISTEN, F_REC, F_THINK, F_SPEAK };
+
 // ================== PIN ==================
 // LCD
 #define LCD_SCK   19   // SCL
@@ -127,7 +129,6 @@ String cleanKey(String s) {
 }
 
 // ================== WAJAH ==================
-enum FaceMode { F_LISTEN, F_REC, F_THINK, F_SPEAK };
 FaceMode faceMode = F_LISTEN;
 uint32_t nextBlink = 0, blinkUntil = 0, lastThinkMove = 0;
 int thinkStep = 0, mouthH = -1;
